@@ -35,7 +35,7 @@ app.use('/api/transactions', transactionRoutes);
 app.use(errorHandler);
 
 // 404 Handler
-app.use('*', (req, res) => {
+app.use((req, res, next) => {
   res.status(404).json({ message: 'Route not found' });
 });
 
